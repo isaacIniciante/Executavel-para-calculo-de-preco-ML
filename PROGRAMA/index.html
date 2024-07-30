@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <title>Análise de preço/mercado</title>
+</head>
+
+<body class="">
+    <div class="container mt-5 border py-3">
+        <div class="row">
+            <hr class="mt-2">
+            <div class="col-12 mb-2">
+                <label for="">Custo do produto</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">R$</span>
+                    </div>
+                    <input type="number" class="form-control" placeholder="Exemplo: 3,99" id="custoProduto"
+                        aria-describedby="basic-addon1">
+                </div>
+            </div>
+
+            <div class="col-12 mb-2">
+                <label for="">Tarifa fixa</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">%</span>
+                    </div>
+                    <input type="number" class="form-control" placeholder="Exemplo: 12" id="tarifaFixa"
+                        aria-describedby="basic-addon1">
+                </div>
+            </div>
+
+            <div class="col-12 mb-2">
+                <label for="">Custo fixo</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">R$</span>
+                    </div>
+                    <input type="number" class="form-control" value="6.00" id="custoFixo"
+                        aria-describedby="basic-addon1">
+                </div>
+            </div>
+
+            <div class="col-12 mb-2">
+                <label for="">Qual porcentagem deseja ganhar sobre o custo?</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">%</span>
+                    </div>
+                    <input type="number" class="form-control" value="100" id="porcentagemDesejada"
+                        aria-describedby="basic-addon1">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="mt-2">
+            <button class="btn btn-success col-4" data-bs-target="#modalSug" data-bs-toggle="modal"
+                onclick="ver()">Ver</button>
+            <button class="btn btn-secondary col-4" onclick="limpar()">limpar</button>
+        </div>
+        <hr>
+        <div class="col-12 bg-dark text-white py-2 text-center">Informações explicativas</div>
+        <hr>
+        <ul class="mt-3">
+            <li><b>CUSTO DO PRODUTO:</b> <br><i><u>Quanto você paga no produto que deseja vender</u></i></li>
+            <hr>
+            <li><b>TARIFA FIXA:</b> <br><i><u>Qual a porcentagem fixa em % que o ML impõe sobre o produto. (Geralmente a tarifa é definida por categoria e preço de venda). <br> Para verificar, vá em um produto seu, que tenha o preço aproximado, da mesma categoria, vá em <b>Anúncios</b>, <b>Preços</b>, <b>Simular</b>, <b>Tarifa fixa</b></u></i></li>
+            <hr>
+            <li><b>CUSTO FIXO:</b> <br><i><u>Custo fixo que o ML impõe sobre o produto. Se encontra no mesmo local da tarifa fixa</u></i></li>
+        </ul>
+
+        <div class="modal fade" tabindex="-1" id="modalSug">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div id="valorSug"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+</body>
+<script src="ajustes.js"></script>
+
+</html>
